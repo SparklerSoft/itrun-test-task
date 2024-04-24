@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="0" author="admin">
+        <comment>Create users table</comment>
+        <createTable tableName="users">
+            <column name="id" autoIncrement="true" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" primaryKeyName="users_pk"/>
+            </column>
+            <column name="type" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="mobile" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pesel" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1" author="admin">
+        <comment>Initializing the users table</comment>
+        <insert tableName="users">
+            <column name="type" value="external"/>
+            <column name="name" value="Kacper"/>
+            <column name="last_name" value="Kowalski"/>
+            <column name="mobile" value="222-333-444"/>
+            <column name="email" value="kacper@mail.com"/>
+            <column name="pesel" value="12345678901"/>
+        </insert>
+        <insert tableName="users">
+            <column name="type" value="external"/>
+            <column name="name" value="Marcin"/>
+            <column name="last_name" value="Horwacik"/>
+            <column name="mobile" value="333-000-484"/>
+            <column name="email" value="marcin615@gmail.com"/>
+            <column name="pesel" value="16789378901"/>
+        </insert>
+        <insert tableName="users">
+            <column name="type" value="external"/>
+            <column name="name" value="Bartosz"/>
+            <column name="last_name" value="Kurek"/>
+            <column name="mobile" value="912-399-890"/>
+            <column name="email" value="b_k@gmail.com"/>
+            <column name="pesel" value="43215678901"/>
+        </insert>
+        <insert tableName="users">
+            <column name="type" value="external"/>
+            <column name="name" value="Lukasz"/>
+            <column name="last_name" value="Kaczmarek"/>
+            <column name="mobile" value="450-111-006"/>
+            <column name="email" value="lukasz999@yahoo.com"/>
+            <column name="pesel" value="15340018302"/>
+        </insert>
+        <insert tableName="users">
+            <column name="type" value="internal"/>
+            <column name="name" value="Pawel"/>
+            <column name="last_name" value="Nowak"/>
+            <column name="mobile" value="111-000-990"/>
+            <column name="email" value="pawel@mail.com"/>
+            <column name="pesel" value="00005678901"/>
+        </insert>
+        <insert tableName="users">
+            <column name="type" value="internal"/>
+            <column name="name" value="Adam"/>
+            <column name="last_name" value="Mamaj"/>
+            <column name="mobile" value="933-118-233"/>
+            <column name="email" value="mamaj_15@mail.com"/>
+            <column name="pesel" value="10041375101"/>
+        </insert>
+        <insert tableName="users">
+            <column name="type" value="internal"/>
+            <column name="name" value="Jan"/>
+            <column name="last_name" value="Migelski"/>
+            <column name="mobile" value="345-011-002"/>
+            <column name="email" value="jmigelski81@gmail.com"/>
+            <column name="pesel" value="43455670632"/>
+        </insert>
+        <insert tableName="users">
+            <column name="type" value="internal"/>
+            <column name="name" value="Rafal"/>
+            <column name="last_name" value="Kaminski"/>
+            <column name="mobile" value="601-611-606"/>
+            <column name="email" value="rafal1234@gmail.com"/>
+            <column name="pesel" value="15096428302"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
